@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "ec00d38c-f01f-4b89-9131-a6b0105a64ad",
+		"name": "Symfony",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36552938"
+	},
+	"item": [
+		{
+			"name": "Auth - Obtener Token JWT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"dcriador@gmail.com\",\r\n    \"password\": \"iristrace\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/login_check",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login_check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categories (Sin JWT)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3Mzk3OTQ0NjgsImV4cCI6MTczOTc5ODA2OCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZGNyaWFkb3JAZ21haWwuY29tIn0.NP5L1yQBmJB7TD42Qk92JT3VOvGHpTYD2c7IrkwyHI-YLsMfTV2AWd_tBJ-S8KasokikT0n69KadhWggZjmpTut9I8l_MCCn3UdaW5obgbEo9RwWcTEfHGaXzzcQQHuNALMySxhuwWoTlLOcDp6iJshK8Z6P0OTK3nnWFEFbYTK0ukX0ZPcrL1Gex6K4bOK3ieGzGKsMllut4zQxA1dDlgFciA9Il0XwOTFqMcO-lb5_FCQrfovyxRYxr8-QZL71DtE2X7ql1DicbWrosWhUWefKaEDjItGseTrf76Hs-_CwtMTGS52n7w7UvqEf41er6PHfANIUQg5c0UpzaYk4oaElY19OjEH80nZ_a8ZKlUD_kk55B7_bVyS_atudNY6_wgbkdvW5fNdevk9SfY56HSeYFIO9e5Q3rjZBAqnfMzNQKVKjuFSFN7HC1_3-IaCFWl3OxbWUYrVIdjNRbx_1RY8PhFzuEGq1-8XpF9HQI398LJfJ6LnRwjcan0yXBr5bNWarqKGt3GB9BZ_jpecbKvD2Vuxb1cZTVLbQAvxyFilwC4_8ms1Kk7diWN0Mztug1vLxFX3qPaOEDOD6v_pphumiyVJ1oXXgHlxrGkXka3pWzKdt_sO9hK31YEuL60stqz8DSD9gEZchgaNYL4NRpf4tTH4v0XwxC_1ifqel_vY",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/categories",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"categories"
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "16",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categories by ID (Sin JWT)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/categories/4",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"categories",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categories (Requiere JWT)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Nueva Categoría 32\",\r\n    \"details\": \"Detalles de prueba\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/categories",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categories (Requiere JWT)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\": \"CAtegoría Actualizada 3\"}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/categories/16",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"categories",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categories (Requiere JWT)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/categories/60",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"categories",
+						"60"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products (Sin JWT)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "category_id",
+						"value": "16",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/products?start_date=2025-02-18",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "16",
+							"disabled": true
+						},
+						{
+							"key": "price_min",
+							"value": "20",
+							"disabled": true
+						},
+						{
+							"key": "price_max",
+							"value": "20",
+							"disabled": true
+						},
+						{
+							"key": "start_date",
+							"value": "2025-02-18"
+						},
+						{
+							"key": "end_date",
+							"value": "2025-02-18",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products by id (Sin JWT)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/products/25",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products (Requiere JWT)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Producto de prueba 20\",\r\n    \"price\": 22.99,\r\n    \"category_id\": 18\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/products",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products (Requiere JWT)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Producto actualizado1\",\r\n     \"price\": 204.99,\r\n     \"category_id\":16\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/products/29",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"29"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products (Requiere JWT)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/products/29",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"29"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "jwt_token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3Mzk3NDYyNDUsImV4cCI6MTczOTc0OTg0NSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZGNyaWFkb3JAZ21haWwuY29tIn0.Hy-K1pjNeQxJKkD4cAW2wi3jjGl32azsURG4tGfRO4-impzF2NSjbKcDP1rlcJu8LUzw9rLl_XiAWme03vfvaGwQ9U91K7izgQdwp1XynTSj645XAWceJm6rwTm2JiOvFrNz086y1iHQzzPCoYlNN_G-xMP5gYUI_wkaGrZ81XVIXWxueH__3sNdeSHJXtwgVAKryPJkYtUsL4ADmfAFrALvrUmaFpoPEQgcMeEOKSQNPOKB_MADl3bzW2x66_L24yB1OPMAgAxQoCvzXbmvXycaTLuTq-3QAhWxZDAKxIJFJjj7jwLR576suRWJg0UkeqWBlRXwnBaqfjyZVkuvYcET3AbteqkxI7Ycn1y0hVRsjy1WegE6_2fgTRyMU_-j0BSs2rzbb-7TcnbFeI1w_gZm95AMCH4cW0wz7_ysvjaTbr5IeR22sh8fvfGOqTJTK65QsqyLlvY0dl0XFK45jUsVqqmbMjSTOUN5Qz_1KktmVxCiXq_aPPn-yMissMs8JipBMHweRe5xjhfqHqPHWsl6W5Z9UStaEM1AvXY9jCNRWmDTANwG8gIuM8CWLSpI36HWd2JkRE7Pt8P3bJ3yCaFXdBHLEQz79glw5beZNtM2xJmkqW1OIQuBaZtkBgO0JqalEswETVu8lk2VLYO5wJGap1y3X_ZlDRq7pFOKhbs"
+		}
+	]
+}
