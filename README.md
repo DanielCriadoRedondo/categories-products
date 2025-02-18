@@ -11,6 +11,7 @@ This project is a **REST API** built with **Symfony** and **Doctrine ORM** to ma
 ✅ **JWT Authentication** for secured modifications.  
 ✅ **Search Filters** for products *(by category, price, and date range)*.  
 ✅ **Event Listeners** to log product creation and deletion.  
+✅ **Postman Collection** available in `postman/Symfony.json` for API testing.  
 
 ---
 
@@ -20,6 +21,7 @@ This project is a **REST API** built with **Symfony** and **Doctrine ORM** to ma
 🔹 **Composer**  
 🔹 **MySQL** or **PostgreSQL**  
 🔹 **Symfony CLI** *(optional but recommended)*  
+🔹 **Postman** *(for API testing, optional)*  
 
 ---
 
@@ -28,8 +30,8 @@ This project is a **REST API** built with **Symfony** and **Doctrine ORM** to ma
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone <repository-url>
-cd <project-directory>
+git clone https://github.com/DanielCriadoRedondo/categories-products.git
+cd categories-products
 ```
 
 ### 2️⃣ Install dependencies
@@ -162,11 +164,16 @@ curl -X GET "http://127.0.0.1:8000/api/v1/products"
 
 ---
 
-## 🎯 **Conclusion**
-This API provides a **fully functional product and category management system** with authentication, validation, event logging, and search filtering. You can **easily extend** this API for additional features.
+## 📜 **Postman Collection**
+To facilitate API testing, a **Postman collection** is available in the repository.
 
-🔹 **For further development, consider adding:**  
-✅ User registration and role-based access control.  
-✅ More advanced filtering (e.g., full-text search).  
-✅ Soft delete functionality instead of permanent deletion.  
+1️⃣ **Download the collection from GitHub**: 
+   📂 `postman/Symfony.json`
+2️⃣ **Import it into Postman**: 
+   - Open **Postman**.
+   - Click **`Import`**.
+   - Select the downloaded `.json` file.
+   - Click **`Confirm`**.
+
+
 
