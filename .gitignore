@@ -1,0 +1,17 @@
+# Symfony specific
+/var/
+/vendor/
+/node_modules/
+/.env
+/.env.local
+/.idea/
+/public/bundles/
+/public/build/
+/config/jwt/* # Exclude JWT keys
+
+# Logs & Caches
+/var/cache/
+/var/log/
+
+# Postman Collections (if private)
+*.postman_collection.json

@@ -1,0 +1,10 @@
+controllers:
+  resource: ../src/Controller/
+  type: attribute
+  prefix: /api/v1
+
+# Añade esto para poder hacer POST /login_check y recibir el token
+login_check:
+  path: api/login_check
+  controller: App\Controller\AuthController::login
+  methods: [POST]
